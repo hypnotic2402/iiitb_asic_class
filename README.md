@@ -15,7 +15,7 @@ sudo apt-get install iverilog gtkwave yosys
 To check whether the tools have been successfully installed use :
 
 ```
-iverilog -V
+iverilog -v
 
 ```
 
