@@ -4,7 +4,10 @@
 
 ### Installations
 
-Using Terminal install yosys, gtkwave and iverilog :
+For Linux (Debian-based):
+
+Installation of yosys. gtkwave and iverilog can be done via 
+Using Terminal install yosys, gtkwave and iverilog : ``apt``
 
 ```
 sudo apt-get install iverilog gtkwave yosys
