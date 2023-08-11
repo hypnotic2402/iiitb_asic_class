@@ -85,6 +85,48 @@ Finally, generate the netlist in form of a verilog file:
 > write_verilog -noattr good_mux_netlist.v
 ```
 
+## Day 2
+
+In case the module has multiple sub-modules inside, yosys can be used to synthsize the design in various styles:
+
+### Hierarchical Synthesis
+
+```
+> read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> read_verilog multiple_modules.v
+> synth -top multiple_modules 
+> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+```
+We can view this netlist as a diagram by :
+```
+> show multiple_modules
+```
+
+![Screenshot from 2023-08-12 04-08-30](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/ccf1d0ea-eb2d-4da7-b59a-e684574651c8)
+Save in form of a verilog file by:
+```
+> write_verilog -noattr multiple_modules_hier.v
+```
+
+### Flattened Synthesis
+
+```
+> read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> read_verilog multiple_modules.v
+> synth -top multiple_modules
+> flatten
+> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+```
+
+We can view this netlist as a diagram by :
+```
+> show multiple_modules
+```
+![Screenshot from 2023-08-12 04-26-29](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/4cdcd0e8-7b7e-46e2-b124-bc3355fb9374)
+
+
+
+
 
 
 
