@@ -1,6 +1,6 @@
 # IIITB ASIC CLASS
 
-## Week 1
+## Day 0
 
 ### Installations
 
@@ -33,6 +33,8 @@ yosys -V
 ```
 
 ![Screenshot from 2023-07-31 09-54-19](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/ea745e6e-5884-4e18-a052-61aa990f8d1b)
+
+## Day 1
 
 ### Simulation of MUX design
 
