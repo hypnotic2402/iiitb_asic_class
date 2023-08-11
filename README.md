@@ -82,7 +82,7 @@ We can use the ``show`` command to see the netlist in form of a graph.
 Finally, generate the netlist in form of a verilog file:
 
 ```
-write_verilog -noattr good_mux_netlist.v
+> write_verilog -noattr good_mux_netlist.v
 ```
 
 
