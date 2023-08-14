@@ -136,9 +136,9 @@ We can view this netlist as a diagram by :
 
 ![Screenshot from 2023-08-12 04-32-36](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/9e013461-3eff-4486-a7fe-9b29f4f161d5)
 
-## Flip-Flop Styles
+### Flip-Flop Styles
 
-### Async-Reset FF
+#### Async-Reset FF
 
 ```
 iverilog dff_asyncres.v tb_dff_asyncres.v
@@ -161,7 +161,7 @@ gtkwave tb_dff_asyncres.vcd
 ![Screenshot from 2023-08-14 22-40-08](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/f8774935-cc7f-47f4-ab20-5de711ed5dcb)
 
 
-### Async-Set FF
+#### Async-Set FF
 
 ```
 iverilog dff_async_set.v tb_dff_async_set.v
@@ -183,7 +183,7 @@ gtkwave tb_dff_async_set.vcd
 
 
 
-### Synch-Reset FF
+#### Synch-Reset FF
 
 ```
 iverilog dff_syncres.v tb_dff_syncres.v
@@ -203,6 +203,27 @@ gtkwave tb_dff_syncres.vcd
 ![Screenshot from 2023-08-14 22-46-15](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/4b5d0de7-6498-432d-b089-d47ae7405b81)
 
 
+### Special cases for synthesis (No Cells used)
+
+```
+> read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> read_verilog mult_2.v
+> synth -top mul2
+> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> show
+```
+
+![Screenshot from 2023-08-14 22-56-02](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/58874f4b-b760-4484-b0fe-e4d7ba1a7533)
+
+
+```
+> read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> read_verilog mult_8.v
+> synth -top mult8
+> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> show
+```
+![Screenshot from 2023-08-14 22-57-54](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/05d28f36-85dc-4720-8ce7-42eedabbb04e)
 
 
 
