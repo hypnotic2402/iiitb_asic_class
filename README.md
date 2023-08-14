@@ -136,9 +136,71 @@ We can view this netlist as a diagram by :
 
 ![Screenshot from 2023-08-12 04-32-36](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/9e013461-3eff-4486-a7fe-9b29f4f161d5)
 
+## Flip-Flop Styles
+
+### Async-Reset FF
+
+```
+iverilog dff_asyncres.v tb_dff_asyncres.v
+./a.out
+gtkwave tb_dff_asyncres.vcd
+```
+
+
+![Screenshot from 2023-08-14 22-28-56](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/55307920-442a-49a7-a242-794cfa602dd9)
+
+```
+> read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> read_verilog dff_asyncres.v
+> synth -top dff_asyncres
+> dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> show
+```
+
+![Screenshot from 2023-08-14 22-40-08](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/f8774935-cc7f-47f4-ab20-5de711ed5dcb)
+
+
+### Async-Set FF
+
+```
+iverilog dff_async_set.v tb_dff_async_set.v
+./a.out
+gtkwave tb_dff_async_set.vcd
+```
+
+![Screenshot from 2023-08-14 22-31-23](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/48ce9633-aedd-42f9-ae90-eef8eaf1ff97)
+
+```
+> read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> read_verilog dff_async_set.v
+> synth -top dff_async_set
+> dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> show
+```
+![Screenshot from 2023-08-14 22-42-25](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/33f166e6-9375-431a-8052-dcfea0c284bc)
 
 
 
+### Synch-Reset FF
+
+```
+iverilog dff_syncres.v tb_dff_syncres.v
+./a.out
+gtkwave tb_dff_syncres.vcd
+```
+![Screenshot from 2023-08-14 22-33-33](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/9aeea405-f7d7-4ef1-bab2-f4bf7dbc469d)
+
+```
+> read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> read_verilog dff_dff_syncres.v
+> synth -top dff_dff_syncres
+> dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> show
+```
+![Screenshot from 2023-08-14 22-46-15](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/4b5d0de7-6498-432d-b089-d47ae7405b81)
 
 
 
