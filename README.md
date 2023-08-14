@@ -226,7 +226,149 @@ gtkwave tb_dff_syncres.vcd
 ![Screenshot from 2023-08-14 22-57-54](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/05d28f36-85dc-4720-8ce7-42eedabbb04e)
 
 
+## Day 3
 
+### Combinatorial Optimizations
+
+```
+> read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> read_verilog opt_check.v
+> synth -top opt_check
+> opt_clean -purge
+> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> show
+```
+![Screenshot from 2023-08-14 23-27-22](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/66970fe3-1d2e-43e4-b306-78b7b7a93a22)
+
+```
+> read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> read_verilog opt_check2.v
+> synth -top opt_check2
+> opt_clean -purge
+> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> show
+```
+![Screenshot from 2023-08-14 23-28-55](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/3d39347b-d21f-41cb-9aec-659cd2088e54)
+
+```
+> read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> read_verilog opt_check3.v
+> synth -top opt_check3
+> opt_clean -purge
+> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> show
+```
+![Screenshot from 2023-08-14 23-30-19](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/ea6f5260-f9df-47b7-a727-4889c3d24a28)
+
+
+```
+> read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> read_verilog opt_check4.v
+> synth -top opt_check4
+> opt_clean -purge
+> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> show
+```
+![Screenshot from 2023-08-14 23-31-10](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/199b59e1-795c-40d4-854b-c138958e0be8)
+
+```
+> read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> read_verilog multiple_module_opt.v
+> synth -top multiple_module_opt
+> flatten
+> opt_clean -purge
+> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> show
+```
+
+![Screenshot from 2023-08-14 23-33-23](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/d2de9d6f-8a7a-4628-975c-932085276dd5)
+
+```
+> read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> read_verilog multiple_module_opt2.v
+> synth -top multiple_module_opt2
+> flatten
+> opt_clean -purge
+> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> show
+```
+![Screenshot from 2023-08-14 23-34-42](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/f2a578bd-bb52-4803-8915-0fc4366c7daf)
+
+
+### Sequential Logic Optimizations
+
+```
+> read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> read_verilog dff_const1.v
+> synth -top dff_const1
+> dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> show
+```
+![Screenshot from 2023-08-14 23-44-47](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/4e3dc337-df9c-4707-8966-e02aef2cab2d)
+
+```
+> read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> read_verilog dff_const2.v
+> synth -top dff_const2
+> dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> show
+```
+![Screenshot from 2023-08-14 23-46-18](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/e5e501d1-f42e-4f48-86f0-b6a6015b8f14)
+
+```
+> read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> read_verilog dff_const3.v
+> synth -top dff_const3
+> dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> show
+```
+
+  
+![Screenshot from 2023-08-14 23-47-11](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/c10b6742-d7b1-43b4-a305-07fe9cb7b3de)
+
+```
+> read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> read_verilog dff_const4.v
+> synth -top dff_const4
+> dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> show
+```
+![Screenshot from 2023-08-14 23-47-49](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/90fde018-9746-40cf-b5d2-2aeea5cfa72c)
+
+```
+> read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> read_verilog dff_const5.v
+> synth -top dff_const5
+> dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> show
+```
+
+![Screenshot from 2023-08-14 23-49-02](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/1eaadb48-1523-4fc3-a3eb-81a8e0328738)
+
+```
+> read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> read_verilog counter_opt.v
+> synth -top counter_opt
+> dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> show
+```
+![Screenshot from 2023-08-14 23-50-44](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/9c48dfbe-333d-4ea1-8924-35f7be430b0b)
+
+```
+> read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> read_verilog counter_opt2.v
+> synth -top counter_opt2
+> dfflibmap -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> show
+```
+![Screenshot from 2023-08-14 23-51-45](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/c881ae66-f62e-4ba6-a43d-be0767488209)
 
 
 
