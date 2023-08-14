@@ -370,5 +370,99 @@ gtkwave tb_dff_syncres.vcd
 ```
 ![Screenshot from 2023-08-14 23-51-45](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/c881ae66-f62e-4ba6-a43d-be0767488209)
 
+## Day 4
+
+### Gate Level Simulation
+
+#### ternary_operator_mux
+
+Before Synthesis :
+
+```
+iverilog ternary_operator_mux.v tb_ternary_operator_mux.v
+./a.out
+gtkwave tb_ternary_operator_mux.vcd
+```
+![Screenshot from 2023-08-15 00-17-50](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/53e9e39b-57ba-4f86-9339-2809392b2b9d)
+
+
+Synthesis:
+```
+> read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> read_verilog ternary_operator_mux.v
+> synth -top ternary_operator_mux
+> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> write_verilog -nnoattr ternary_operator_mux_net.v
+```
+
+Post Synthesis:
+```
+iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v ternary_operator_mux_net.v tb_ternary_operator_mux.v
+./a.out
+gtkwave tb_ternary_operator_mux.vcd
+```
+
+![Screenshot from 2023-08-15 00-22-57](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/2354c57d-22a7-469d-b083-2305a8b2d1da)
+
+#### bad_mux
+
+Before Synthesis:
+
+```
+iverilog bad_mux.v tb_bad_mux.v
+./a.out
+gtkwave tb_bad_mux.vcd
+```
+
+![Screenshot from 2023-08-15 00-26-22](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/e567a922-89b3-4b8c-9b6e-b3caa8f317de)
+
+Synthesis:
+```
+> read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> read_verilog bad_mux.v
+> synth -top bad_mux
+> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> write_verilog -nnoattr bad_mux_net.v
+```
+
+Post Synthesis:
+```
+iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v bad_mux_net.v tb_bad_mux.v
+./a.out
+gtkwave tb_bad_mux.vcd
+```
+
+![Screenshot from 2023-08-15 00-28-52](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/3bd41465-d373-4b4e-8f76-907ec0ab1e59)
+
+#### blocking_caveat
+
+Before Synthesis:
+
+```
+iverilog blocking_caveat.v tb_blocking_caveat.v
+./a.out
+gtkwave tb_blocking_caveat.vcd
+```
+![Screenshot from 2023-08-15 00-33-32](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/7aebbbcb-3883-4a99-bf2a-004498dddbdc)
+
+
+Synthesis:
+```
+> read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> read_verilog blocking_caveat.v
+> synth -top blocking_caveat
+> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> write_verilog -nnoattr blocking_caveat_net.v
+```
+
+Post Synthesis:
+```
+iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v blocking_caveat_net.v tb_blocking_caveat.v
+./a.out
+gtkwave tb_blocking_caveat.vcd
+```
+![Screenshot from 2023-08-15 00-35-24](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/18a0e941-d92b-4538-b7df-cd677fe4c7f0)
+
+
 
 
