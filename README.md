@@ -124,6 +124,22 @@ We can view this netlist as a diagram by :
 ```
 ![Screenshot from 2023-08-12 04-26-29](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/4cdcd0e8-7b7e-46e2-b124-bc3355fb9374)
 
+### Sub-Module Level
+
+```
+> read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> read_verilog multiple_modules.v
+> synth -top sub_module1
+> abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+> show
+```
+
+![Screenshot from 2023-08-12 04-32-36](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/9e013461-3eff-4486-a7fe-9b29f4f161d5)
+
+
+
+
+
 
 
 
