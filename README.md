@@ -1,6 +1,8 @@
 # IIITB ASIC CLASS
 
-## Day 0
+<details>
+
+<summary>## Day 0</summary>
 
 ### Installations
 
@@ -33,6 +35,8 @@ yosys -V
 ```
 
 ![Screenshot from 2023-07-31 09-54-19](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/ea745e6e-5884-4e18-a052-61aa990f8d1b)
+
+</details>
 
 ## Day 1
 
