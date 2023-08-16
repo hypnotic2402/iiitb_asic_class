@@ -93,7 +93,9 @@ Finally, generate the netlist in form of a verilog file:
 
 </details>
 
-## Day 2
+<details>
+
+<summary> Day 2 </summary>
 
 In case the module has multiple sub-modules inside, yosys can be used to synthsize the design in various styles:
 
@@ -233,8 +235,11 @@ gtkwave tb_dff_syncres.vcd
 ```
 ![Screenshot from 2023-08-14 22-57-54](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/05d28f36-85dc-4720-8ce7-42eedabbb04e)
 
+</details>
 
-## Day 3
+<details>
+
+<summary> Day 3 </summary>
 
 ### Combinatorial Optimizations
 
@@ -378,7 +383,11 @@ gtkwave tb_dff_syncres.vcd
 ```
 ![Screenshot from 2023-08-14 23-51-45](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/c881ae66-f62e-4ba6-a43d-be0767488209)
 
-## Day 4
+</details>
+
+<details>
+
+<summary> Day 4 </summary>
 
 ### Gate Level Simulation
 
@@ -472,5 +481,5 @@ gtkwave tb_blocking_caveat.vcd
 ![Screenshot from 2023-08-15 00-35-24](https://github.com/hypnotic2402/iiitb_asic_class/assets/75616591/18a0e941-d92b-4538-b7df-cd677fe4c7f0)
 
 
-
+</details>
 
