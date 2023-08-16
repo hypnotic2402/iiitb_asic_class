@@ -40,7 +40,7 @@ yosys -V
 
 <details>
 
-<summary>Day 1</summary>
+<summary> Day 1 </summary>
 
 ### Simulation of MUX design
 
