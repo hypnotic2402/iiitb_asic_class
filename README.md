@@ -38,7 +38,9 @@ yosys -V
 
 </details>
 
-## Day 1
+<details>
+
+<summary>Day 1</summary>
 
 ### Simulation of MUX design
 
@@ -88,6 +90,8 @@ Finally, generate the netlist in form of a verilog file:
 ```
 > write_verilog -noattr good_mux_netlist.v
 ```
+
+</details>
 
 ## Day 2
 
