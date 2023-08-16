@@ -2,7 +2,7 @@
 
 <details>
 
-<summary>## Day 0</summary>
+<summaryDay 0</summary>
 
 ### Installations
 
